@@ -1,16 +1,14 @@
-# ui_healthy_food
 
-A new Flutter project.
+# Healthy Food Apps UI Challenge
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Acknowledgements
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ - [dribbble App UI](https://dribbble.com/shots/11241933-Healthy-food-delivery-app)
+
+
+## Screenshots
+
+![screen](https://firebasestorage.googleapis.com/v0/b/github-assets.appspot.com/o/healthy_food_ui%2FScreenshot%202023-11-17%20at%2011.29.54.png?alt=media&token=fed50075-8baa-48aa-8aac-be4170d99a8a)
