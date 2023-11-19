@@ -50,7 +50,7 @@ class MenuScreen extends StatelessWidget {
               right: (MediaQuery.of(context).size.width / 2) - 130,
               child: Image.asset(
                 AssetConstant.cuisinierImg,
-                width: 230,
+                width: MediaQuery.of(context).size.width / 2.2,
               ),
             ),
           ]),
