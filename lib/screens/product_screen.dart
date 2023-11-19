@@ -159,39 +159,42 @@ class ProductScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ...product.compo.map((e) => Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 4),
-                        padding: const EdgeInsets.all(5),
-                        width: 70,
-                        height: 70,
-                        decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(0.1),
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              e.name,
-                              style: GoogleFonts.poppins(
-                                  fontSize: 12,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w800),
-                            ),
-                            Text(
-                              "${e.value} ${e.unit}",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 10,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w700),
-                            ),
-                          ],
-                        ),
-                      ))
-                ],
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ...product.compo.map((e) => Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 4),
+                          padding: const EdgeInsets.all(5),
+                          width: 70,
+                          height: 70,
+                          decoration: BoxDecoration(
+                              color: Colors.grey.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                e.name,
+                                style: GoogleFonts.poppins(
+                                    fontSize: 12,
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w800),
+                              ),
+                              Text(
+                                "${e.value} ${e.unit}",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 10,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w700),
+                              ),
+                            ],
+                          ),
+                        ))
+                  ],
+                ),
               )
             ],
           ),
