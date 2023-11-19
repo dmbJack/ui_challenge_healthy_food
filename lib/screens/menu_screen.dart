@@ -92,16 +92,23 @@ class MenuScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Stack(children: [
+                          Stack(clipBehavior: Clip.none, children: [
                             Hero(
-                              tag: ProductModel.products[index].name + ProductModel.products[index].price.toString() ,
-                              child: Image.asset(
-                                ProductModel.products[index].image,
+                              tag: ProductModel.products[index].name +
+                                  ProductModel.products[index].price.toString(),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.asset(
+                                  ProductModel.products[index].image,
+                                  fit: BoxFit.cover,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.45,
+                                ),
                               ),
                             ),
                             Positioned(
-                              right: 0,
-                              bottom: 0,
+                              right: -20,
+                              bottom: -10,
                               child: Container(
                                 width: 50,
                                 height: 50,

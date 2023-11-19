@@ -12,186 +12,189 @@ class ProductScreen extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(right: 15, left: 15, top: 60),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Stack(children: [
-              Hero(
-                 tag: product.name + product.price.toString() ,
-                child: Container(
-                  width: double.infinity,
-                  height: 300,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                        image: AssetImage(product.image), fit: BoxFit.cover),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Stack(children: [
+                Hero(
+                  tag: product.name + product.price.toString(),
+                  child: Container(
+                    width: double.infinity,
+                    height: 300,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                          MediaQuery.of(context).size.width / 10),
+                      image: DecorationImage(
+                          image: AssetImage(product.image), fit: BoxFit.cover),
+                    ),
                   ),
                 ),
-              ),
-              Positioned(
-                  top: 10,
-                  left: 10,
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                        color: Colors.grey.withOpacity(0.8),
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Center(
-                      child: IconButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          icon: Icon(
-                            Icons.adaptive.arrow_back,
-                            size: 30,
-                            color: Colors.black,
-                          )),
-                    ),
-                  )),
-              Positioned(
-                  top: 10,
-                  right: 10,
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                        color: Colors.grey.withOpacity(0.8),
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Center(
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.favorite_outline,
-                            size: 30,
-                            color: Colors.black,
-                          )),
-                    ),
-                  )),
-            ]),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Text(
-                  product.name,
-                  style: GoogleFonts.poppins(
-                      fontSize: 32, fontWeight: FontWeight.bold),
-                ),
-                const Spacer(),
-                Row(
-                  children: [
-                    Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.grey.withOpacity(0.2)),
-                        child: const Center(
-                          child: Text(
-                            "-",
-                            style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black),
-                          ),
-                        )),
-                    Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.transparent),
-                        child: const Center(
-                          child: Text(
-                            "1",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
-                          ),
-                        )),
-                    Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: ColorsPallete.primaryColor),
-                        child: const Center(
-                          child: Text(
-                            "+",
-                            style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white),
-                          ),
-                        )),
-                  ],
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 60,
-            ),
-            Text(
-              "Description",
-              style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.w600, fontSize: 18),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              product.description,
-              style: GoogleFonts.poppins(fontSize: 16, color: Colors.black45),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Text(
-              "Nutrition Facts",
-              style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.w600, fontSize: 18),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ...product.compo.map((e) => Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 4),
-                      padding: const EdgeInsets.all(5),
-                      width: 70,
-                      height: 70,
+                Positioned(
+                    top: 10,
+                    left: 10,
+                    child: Container(
+                      width: 50,
+                      height: 50,
                       decoration: BoxDecoration(
-                          color: Colors.grey.withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            e.name,
-                            style: GoogleFonts.poppins(
-                                fontSize: 12,
-                                color: Colors.grey,
-                                fontWeight: FontWeight.w800),
-                          ),
-                          Text(
-                            "${e.value} ${e.unit}",
-                            style: GoogleFonts.poppins(
-                                fontSize: 10,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w700),
-                          ),
-                        ],
+                          color: Colors.grey.withOpacity(0.8),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Center(
+                        child: IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: Icon(
+                              Icons.adaptive.arrow_back,
+                              size: 30,
+                              color: Colors.black,
+                            )),
                       ),
-                    ))
-              ],
-            )
-          ],
+                    )),
+                Positioned(
+                    top: 10,
+                    right: 10,
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.8),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Center(
+                        child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.favorite_outline,
+                              size: 30,
+                              color: Colors.black,
+                            )),
+                      ),
+                    )),
+              ]),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Text(
+                    product.name,
+                    style: GoogleFonts.poppins(
+                        fontSize: 32, fontWeight: FontWeight.bold),
+                  ),
+                  const Spacer(),
+                  Row(
+                    children: [
+                      Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.grey.withOpacity(0.2)),
+                          child: const Center(
+                            child: Text(
+                              "-",
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black),
+                            ),
+                          )),
+                      Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.transparent),
+                          child: const Center(
+                            child: Text(
+                              "1",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            ),
+                          )),
+                      Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: ColorsPallete.primaryColor),
+                          child: const Center(
+                            child: Text(
+                              "+",
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.white),
+                            ),
+                          )),
+                    ],
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 60,
+              ),
+              Text(
+                "Description",
+                style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w600, fontSize: 18),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                product.description,
+                style: GoogleFonts.poppins(fontSize: 16, color: Colors.black45),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Text(
+                "Nutrition Facts",
+                style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w600, fontSize: 18),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ...product.compo.map((e) => Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 4),
+                        padding: const EdgeInsets.all(5),
+                        width: 70,
+                        height: 70,
+                        decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              e.name,
+                              style: GoogleFonts.poppins(
+                                  fontSize: 12,
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w800),
+                            ),
+                            Text(
+                              "${e.value} ${e.unit}",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 10,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ],
+                        ),
+                      ))
+                ],
+              )
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: InkWell(
@@ -226,7 +229,7 @@ class ProductScreen extends StatelessWidget {
                 style: GoogleFonts.poppins(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
-                    fontSize: 22),
+                    fontSize: 20),
               ),
               Container(
                 padding: const EdgeInsets.all(5),
