@@ -32,7 +32,7 @@ class ProductScreen extends StatelessWidget {
                 ),
                 Positioned(
                     top: 10,
-                    left: 10,
+                    left: 15,
                     child: Container(
                       width: 50,
                       height: 50,
@@ -53,7 +53,7 @@ class ProductScreen extends StatelessWidget {
                     )),
                 Positioned(
                     top: 10,
-                    right: 10,
+                    right: 15,
                     child: Container(
                       width: 50,
                       height: 50,
@@ -79,7 +79,7 @@ class ProductScreen extends StatelessWidget {
                   Text(
                     product.name,
                     style: GoogleFonts.poppins(
-                        fontSize: 32, fontWeight: FontWeight.bold),
+                        fontSize: 28, fontWeight: FontWeight.bold),
                   ),
                   const Spacer(),
                   Row(

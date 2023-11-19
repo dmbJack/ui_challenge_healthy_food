@@ -16,8 +16,8 @@ class MenuScreen extends StatelessWidget {
       body: Column(
         children: [
           Stack(children: [
-            const CustomPaintDesign(
-              height: 300,
+            CustomPaintDesign(
+              height: MediaQuery.of(context).size.height / 3,
             ),
             Positioned(
               left: 20,
@@ -45,12 +45,14 @@ class MenuScreen extends StatelessWidget {
                         size: 30,
                       )),
                 )),
-            Positioned(
-              top: 70,
-              right: (MediaQuery.of(context).size.width / 2) - 130,
-              child: Image.asset(
-                AssetConstant.cuisinierImg,
-                width: MediaQuery.of(context).size.width / 2.2,
+            Padding(
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.09),
+              child: Center(
+                child: Image.asset(
+                  AssetConstant.cuisinierImg,
+                  width: MediaQuery.of(context).size.width / 2.2,
+                ),
               ),
             ),
           ]),
@@ -177,13 +179,13 @@ class NavigationButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        height: 50,
+        padding: const EdgeInsets.only(right: 10, left: 10, top: 20),
+        height: 70,
         decoration: BoxDecoration(
           color: isSelected ? ColorsPallete.primaryColor : Colors.transparent,
           borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
+            topLeft: Radius.circular(40),
+            topRight: Radius.circular(40),
           ),
         ),
         child: Column(
