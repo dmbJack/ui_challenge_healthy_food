@@ -89,51 +89,55 @@ class MenuScreen extends StatelessWidget {
                                   product: ProductModel.products[index])));
                     },
                     child: SizedBox(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Stack(clipBehavior: Clip.none, children: [
-                            Hero(
-                              tag: ProductModel.products[index].name +
-                                  ProductModel.products[index].price.toString(),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Image.asset(
-                                  ProductModel.products[index].image,
-                                  fit: BoxFit.cover,
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.45,
+                      child: Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Stack(clipBehavior: Clip.none, children: [
+                              Hero(
+                                tag: ProductModel.products[index].name +
+                                    ProductModel.products[index].price
+                                        .toString(),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Image.asset(
+                                    ProductModel.products[index].image,
+                                    fit: BoxFit.cover,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.42,
+                                  ),
                                 ),
                               ),
+                              Positioned(
+                                right: -10,
+                                bottom: -10,
+                                child: Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                      color: ColorsPallete.primaryColor,
+                                      borderRadius: BorderRadius.circular(50)),
+                                  child: IconButton(
+                                      onPressed: () {},
+                                      icon: const Icon(Icons.add)),
+                                ),
+                              )
+                            ]),
+                            Text(
+                              ProductModel.products[index].name,
+                              style: GoogleFonts.poppins(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
                             ),
-                            Positioned(
-                              right: -20,
-                              bottom: -10,
-                              child: Container(
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                    color: ColorsPallete.primaryColor,
-                                    borderRadius: BorderRadius.circular(50)),
-                                child: IconButton(
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.add)),
-                              ),
+                            Text(
+                              "${ProductModel.products[index].price} €",
+                              style: GoogleFonts.poppins(
+                                  color: Colors.red,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600),
                             )
-                          ]),
-                          Text(
-                            ProductModel.products[index].name,
-                            style: GoogleFonts.poppins(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            "${ProductModel.products[index].price} €",
-                            style: GoogleFonts.poppins(
-                                color: Colors.red,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600),
-                          )
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   );
