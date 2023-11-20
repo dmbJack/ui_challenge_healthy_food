@@ -21,7 +21,7 @@ class MenuScreen extends StatelessWidget {
             ),
             Positioned(
               left: 20,
-              top: 40,
+              top: 50,
               child: Text(
                 "Let's feed\nhealthy food",
                 style: GoogleFonts.poppins(
@@ -45,9 +45,10 @@ class MenuScreen extends StatelessWidget {
                         size: 30,
                       )),
                 )),
-            Padding(
-              padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * 0.09),
+            Positioned(
+              right: 0,
+              left: 0,
+              top: MediaQuery.of(context).size.height * 0.1,
               child: Center(
                 child: Image.asset(
                   AssetConstant.cuisinierImg,
