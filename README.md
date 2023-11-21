@@ -11,4 +11,4 @@
 
 ## Screenshots
 
-![screen](https://firebasestorage.googleapis.com/v0/b/github-assets.appspot.com/o/healthy_food_ui%2FScreenshot%202023-11-17%20at%2011.29.54.png?alt=media&token=fed50075-8baa-48aa-8aac-be4170d99a8a)
+![screen](https://firebasestorage.googleapis.com/v0/b/github-assets.appspot.com/o/healthy_food_ui%2FScreenshot%202023-11-21%20at%2014.43.08.png?alt=media&token=f2a844e7-e358-47d3-8fce-bf62b65b2102)
